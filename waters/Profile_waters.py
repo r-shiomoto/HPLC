@@ -99,12 +99,12 @@ sheet2 = wb.create_sheet("pick_up_area")
 for i,j in zip(rrt_list,range(4,len(rrt_list)+4)):
     sheet1.cell(row=j,column=1).value=i
     sheet2.cell(row=j,column=1).value=i
-sheet1.cell(row=j+1,column=1).value="sum of area%"
-sheet2.cell(row=j+1,column=1).value="sum of area"
-sheet1.cell(row=1,column=num1-1).value="サンプル名"
-sheet1.cell(row=2,column=num1-1).value="分析日"
-sheet2.cell(row=1,column=num1-1).value="サンプル名"
-sheet2.cell(row=2,column=num1-1).value="分析日"
+    sheet1.cell(row=j+1,column=1).value="sum of area%"
+    sheet2.cell(row=j+1,column=1).value="sum of area"
+    sheet1.cell(row=1,column=num1-1).value="サンプル名"
+    sheet1.cell(row=2,column=num1-1).value="分析日"
+    sheet2.cell(row=1,column=num1-1).value="サンプル名"
+    sheet2.cell(row=2,column=num1-1).value="分析日"
 for data in data_dic:
     df1 = data_dic[data]["df1"]
     df2 = data_dic[data]["df2"]
@@ -141,14 +141,3 @@ print()
 print("================================")
 print("エクセルファイルを作成しました。")
 print("================================")
-
-
-#============================
-#ファイル名を変更する
-print('\nファイル名を変更中...')
-for data in data_dic:
-    df1 = data_dic[data]["df1"]
-    sample_name = df1.loc["サンプル名"].values[0]
-    bft, aft = rename(bfr=data, aft=sample_name, rtn=True)
-    print('before name: {}\t after name: {}'.format(bft, aft))
-print('\nファイル名の変更終了')
