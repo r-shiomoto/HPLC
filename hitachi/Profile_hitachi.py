@@ -138,8 +138,8 @@ for m in data_list:
     for r in range(4,len(rrt_list)+4):
         for n in df_rt['RRT']:
             if n==sheet1.cell(row=r,column=1).value:
-                sheet1.cell(row=r,column=num1).value=df_rt[df_rt['RRT']==n].iloc[:,2].values[0]
-                sheet2.cell(row=r,column=num1).value=df_rt[df_rt['RRT']==n].iloc[:,3].values[0]
+                sheet1.cell(row=r,column=num1).value=df_rt[df_rt['RRT']==n].iloc[:,3].values[0]
+                sheet2.cell(row=r,column=num1).value=df_rt[df_rt['RRT']==n].iloc[:,2].values[0]
             else:
                 continue
     sheet1.cell(row=r+1,column=num1).value=df_rt.iloc[:,2].sum()
